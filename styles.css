@@ -97,3 +97,9 @@ body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-f
  .hero-clean .name-marquee-track span{font-size:clamp(82px,19vw,135px)}
 }
 @media(prefers-reduced-motion:reduce){.hero-clean .name-marquee-track{animation:none;transform:translateX(-20%)}}
+
+
+/* Clear breathing room between each repeated name */
+.hero-clean .name-marquee-track{
+  gap:clamp(2.5rem,6vw,7rem);
+}
