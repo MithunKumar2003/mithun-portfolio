@@ -320,3 +320,56 @@ body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-f
  .hero-clean .tool-cloud-right .tool-chip:nth-child(n+3){display:none}
 }
 @media(prefers-reduced-motion:reduce){.hero-clean .tool-chip{animation:none!important}}
+
+
+/* Keep tool badges in the clear outer margins, above the moving name */
+.hero-clean .tool-cloud{
+  top:17%!important;
+  bottom:auto!important;
+  flex-direction:row!important;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px;
+  max-width:38%;
+}
+.hero-clean .tool-cloud-left{
+  left:5.5%!important;
+  right:auto!important;
+  justify-content:flex-start;
+}
+.hero-clean .tool-cloud-right{
+  right:5.5%!important;
+  left:auto!important;
+  justify-content:flex-end;
+}
+.hero-clean .tool-chip{
+  padding:5px 9px 5px 5px;
+  gap:7px;
+  border-radius:8px;
+  animation-duration:8s;
+}
+.hero-clean .tool-chip b{width:26px;height:26px;font-size:14px}
+.hero-clean .tool-chip small{font-size:8px}
+.hero-clean .decor-sticker-type{
+  left:7%!important;
+  bottom:12%!important;
+  top:auto!important;
+}
+.hero-clean .decor-sticker-color{
+  right:7%!important;
+  bottom:12%!important;
+  top:auto!important;
+}
+@media(max-width:760px){
+  .hero-clean .tool-cloud{
+    top:13%!important;
+    max-width:43%;
+    gap:5px;
+  }
+  .hero-clean .tool-cloud-left{left:3%!important}
+  .hero-clean .tool-cloud-right{right:3%!important}
+  .hero-clean .tool-chip{padding:4px;gap:0}
+  .hero-clean .tool-chip b{width:23px;height:23px;font-size:12px}
+  .hero-clean .decor-sticker-type{left:4%!important;bottom:9%!important}
+  .hero-clean .decor-sticker-color{right:4%!important;bottom:9%!important}
+}
