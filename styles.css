@@ -410,3 +410,12 @@ body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-f
   filter:drop-shadow(0 10px 10px rgba(27,26,24,.18))
          drop-shadow(0 24px 24px rgba(27,26,24,.12))!important;
 }
+
+
+/* Red ambient shadow around the hero cutout portrait */
+.hero-clean .hero-photo{
+  filter:
+    drop-shadow(0 0 7px rgba(185,54,45,.72))
+    drop-shadow(0 8px 15px rgba(185,54,45,.42))
+    drop-shadow(0 20px 24px rgba(185,54,45,.22))!important;
+}
