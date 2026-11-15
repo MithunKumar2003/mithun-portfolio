@@ -12,10 +12,10 @@ A responsive, single-page portfolio website for a graphic designer.
 Open `index.html` in a browser.
 
 ## Publish with GitHub Pages
-1. Open the repository **Settings → Pages**.
-2. Under **Build and deployment**, choose **Deploy from a branch**.
-3. Select **main** and **/(root)**, then save.
-4. Your website will be available at: https://mithunkumar2003.github.io/mithun-portfolio/
+1. Open the repository **Settings → Pages**: https://github.com/MithunKumar2003/mithun-portfolio/settings/pages
+2. Under **Build and deployment**, set **Source** to **GitHub Actions** and save.
+3. Open **Actions → Deploy portfolio to GitHub Pages** and choose **Run workflow** on the `main` branch.
+4. After the workflow succeeds, your website will be available at: https://mithunkumar2003.github.io/mithun-portfolio/
 
 ## Customize before sharing
 - Replace the concept-study gallery cards in `index.html` with real project images and descriptions.
