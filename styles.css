@@ -175,3 +175,76 @@ body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-f
   .ticker{min-height:50px;padding:14px 0}
   .ticker-track{font-size:13px;gap:22px}
 }
+
+/* Floating graphic-design details: quiet, editorial and behind the portrait */
+.hero-clean .hero-decor{
+  position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+  color:var(--red);
+}
+.hero-clean .decor-spark{
+  position:absolute;color:var(--red);font:500 clamp(30px,4vw,54px)/1 var(--body);
+  animation:decor-float 6s ease-in-out infinite;
+}
+.hero-clean .decor-spark-one{left:12%;top:23%;animation-delay:-1.4s}
+.hero-clean .decor-spark-two{right:13%;top:19%;font-size:clamp(22px,3vw,38px);color:var(--yellow);animation-delay:-3.2s}
+.hero-clean .decor-orbit{
+  position:absolute;border:1px solid rgba(185,54,45,.35);border-radius:50%;
+  animation:decor-orbit 18s linear infinite;
+}
+.hero-clean .decor-orbit-one{width:120px;height:120px;left:8%;top:53%}
+.hero-clean .decor-orbit-two{width:68px;height:68px;right:9%;top:62%;border-style:dashed;animation-direction:reverse;animation-duration:24s}
+.hero-clean .decor-cross{
+  position:absolute;color:var(--ink);font:300 34px/1 var(--body);
+  animation:decor-float 7s ease-in-out infinite;
+}
+.hero-clean .decor-cross-one{left:24%;top:72%;animation-delay:-2s}
+.hero-clean .decor-cross-two{right:24%;top:29%;font-size:25px;animation-delay:-4s}
+.hero-clean .decor-sticker{
+  position:absolute;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--ink);background:#f7efdf;color:var(--ink);
+  box-shadow:4px 5px 0 rgba(27,26,24,.10);
+}
+.hero-clean .decor-sticker-type{
+  left:15%;top:39%;width:72px;height:72px;border-radius:50%;
+  flex-direction:column;font:700 25px/.9 var(--display);transform:rotate(-12deg);
+  animation:decor-float 8s ease-in-out infinite;
+}
+.hero-clean .decor-sticker small{font:8px var(--mono);letter-spacing:1.5px;margin-top:5px}
+.hero-clean .decor-sticker-color{
+  right:15%;top:43%;width:88px;height:58px;border-radius:7px;
+  gap:5px;flex-wrap:wrap;padding:9px 9px 17px;transform:rotate(9deg);
+  animation:decor-float 7.5s ease-in-out -2s infinite;
+}
+.hero-clean .decor-sticker-color i{width:13px;height:13px;border-radius:50%;background:var(--red)}
+.hero-clean .decor-sticker-color i:nth-child(2){background:var(--yellow)}
+.hero-clean .decor-sticker-color i:nth-child(3){background:var(--ink)}
+.hero-clean .decor-sticker-color i:nth-child(4){background:var(--blue)}
+.hero-clean .decor-sticker-color small{position:absolute;bottom:4px;left:0;right:0;text-align:center;margin:0}
+.hero-clean .decor-pencil{
+  position:absolute;right:27%;bottom:17%;font:42px/1 Georgia,serif;
+  color:var(--red);transform:rotate(-28deg);animation:decor-float 6.5s ease-in-out -1s infinite;
+}
+.hero-clean .decor-caption{
+  position:absolute;font:8px var(--mono);letter-spacing:1.6px;color:var(--muted);
+  white-space:nowrap;
+}
+.hero-clean .decor-caption-left{left:5%;top:16%;transform:rotate(-90deg);transform-origin:left}
+.hero-clean .decor-caption-right{right:4%;bottom:16%;transform:rotate(90deg);transform-origin:right}
+@keyframes decor-float{0%,100%{translate:0 0}50%{translate:0 -11px}}
+@keyframes decor-orbit{to{transform:rotate(360deg)}}
+@media(max-width:760px){
+ .hero-clean .decor-spark-one{left:5%;top:18%}
+ .hero-clean .decor-spark-two{right:5%;top:24%}
+ .hero-clean .decor-orbit-one{width:72px;height:72px;left:2%;top:58%}
+ .hero-clean .decor-orbit-two{width:48px;height:48px;right:3%;top:66%}
+ .hero-clean .decor-sticker-type{left:4%;top:39%;width:52px;height:52px;font-size:18px}
+ .hero-clean .decor-sticker-color{right:4%;top:43%;width:70px;height:49px;gap:3px;padding:7px 6px 15px}
+ .hero-clean .decor-sticker-color i{width:10px;height:10px}
+ .hero-clean .decor-pencil{right:8%;bottom:13%;font-size:30px}
+ .hero-clean .decor-caption{display:none}
+ .hero-clean .decor-cross-one{left:12%;top:77%}
+ .hero-clean .decor-cross-two{right:13%;top:30%}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-clean .hero-decor *{animation:none!important}
+}
