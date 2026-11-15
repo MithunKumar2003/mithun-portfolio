@@ -15,3 +15,35 @@ if(matchMedia("(hover:hover) and (pointer:fine)").matches){document.querySelecto
 const tiltOK=matchMedia("(hover:hover) and (pointer:fine)").matches&&!matchMedia("(prefers-reduced-motion: reduce)").matches;
 if(tiltOK){document.querySelectorAll("[data-tilt]").forEach(card=>{const image=card.querySelector(".work-image");card.addEventListener("pointermove",e=>{const r=image.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;image.style.transform=`perspective(900px) rotateY(${x*3}deg) rotateX(${-y*3}deg) scale(1.01)`});card.addEventListener("pointerleave",()=>image.style.transform="")})}
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",e=>{const target=document.querySelector(a.getAttribute("href"));if(target){e.preventDefault();target.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})}}));
+/* Project detail lightbox */
+(()=>{
+ const modal=document.querySelector("#project-modal");
+ if(!modal)return;
+ const image=modal.querySelector("#project-modal-image");
+ const title=modal.querySelector("#project-modal-title");
+ const kicker=modal.querySelector("#project-modal-kicker");
+ const description=modal.querySelector("#project-modal-description");
+ const tools=modal.querySelector("#project-modal-tools");
+ const projects={
+  "brindha-portrait":{
+   src:"images/Brindha%20logo.png",alt:"Brindha logo design — portrait composition",
+   title:"Brindha — Logo design",kicker:"01 / LOGO DESIGN",
+   description:"A warm, character-led logo composition featuring an illustrated woman, Tamil lettering and a rich golden-brown palette."
+  },
+  "brindha-horizontal":{
+   src:"images/Brindha%20logo%201.png",alt:"Brindha logo design — horizontal composition",
+   title:"Brindha — Logo application",kicker:"02 / LOGO DESIGN",
+   description:"A horizontal logo composition balancing the illustrated portrait, Tamil lettering and a decorative gold baseline."
+  }
+ };
+ const open=key=>{
+  const p=projects[key];if(!p)return;
+  image.src=p.src;image.alt=p.alt;title.textContent=p.title;kicker.textContent=p.kicker;description.textContent=p.description;
+  modal.classList.add("is-open");modal.setAttribute("aria-hidden","false");document.body.classList.add("modal-open");
+  modal.querySelector(".project-modal-close")?.focus();
+ };
+ const close=()=>{modal.classList.remove("is-open");modal.setAttribute("aria-hidden","true");document.body.classList.remove("modal-open");};
+ document.querySelectorAll("[data-project]").forEach(link=>link.addEventListener("click",e=>{e.preventDefault();open(link.dataset.project)}));
+ modal.querySelectorAll("[data-modal-close]").forEach(el=>el.addEventListener("click",close));
+ document.addEventListener("keydown",e=>{if(e.key==="Escape"&&modal.classList.contains("is-open"))close()});
+})();
