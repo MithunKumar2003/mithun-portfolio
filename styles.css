@@ -393,3 +393,20 @@ body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-f
 @media(prefers-reduced-motion:reduce){
   .work-image{transition:none}
 }
+
+
+/* Actual soft shadows only — no added margins or spacing */
+.work-image{
+  box-shadow:0 8px 18px rgba(27,26,24,.10),0 22px 42px rgba(27,26,24,.07)!important;
+}
+.work-image.image-red{
+  box-shadow:0 10px 22px rgba(110,35,28,.16),0 24px 46px rgba(27,26,24,.10)!important;
+}
+.identity-type,
+.poster-words{
+  text-shadow:0 3px 9px rgba(27,26,24,.10);
+}
+.hero-clean .hero-photo{
+  filter:drop-shadow(0 10px 10px rgba(27,26,24,.18))
+         drop-shadow(0 24px 24px rgba(27,26,24,.12))!important;
+}
