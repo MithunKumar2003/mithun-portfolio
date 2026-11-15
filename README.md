@@ -23,3 +23,6 @@ Open `index.html` in a browser.
 - Update the location, skills and biography to reflect your preferred details.
 
 The current gallery artwork is CSS-based concept artwork, not a claim that these are completed client projects.
+
+## Add your hero portrait
+Upload the supplied PNG as `assets/mithun-hero.png` (create the `assets` folder first). The hero section is already configured to display that exact path.
