@@ -279,3 +279,44 @@ body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-f
   .hero-clean .decor-sticker-type{left:4%;bottom:11%;width:48px;height:48px;font-size:17px}
   .hero-clean .decor-sticker-color{right:4%;bottom:11%;width:66px;height:46px}
 }
+
+/* Floating design software + AI tool logo stickers */
+.hero-clean .tool-cloud{
+  position:absolute;z-index:7;display:flex;gap:10px;align-items:center;
+  pointer-events:none;
+}
+.hero-clean .tool-cloud-left{left:5.5%;top:24%;flex-direction:column;align-items:flex-start}
+.hero-clean .tool-cloud-right{right:5.5%;top:23%;flex-direction:column;align-items:flex-end}
+.hero-clean .tool-chip{
+  display:flex;align-items:center;gap:9px;padding:7px 11px 7px 7px;
+  border:1px solid rgba(28,27,25,.13);border-radius:9px;background:rgba(255,252,245,.88);
+  box-shadow:0 5px 15px rgba(42,32,24,.07);backdrop-filter:blur(8px);
+  animation:tool-drift 6.8s ease-in-out infinite;
+}
+.hero-clean .tool-chip b{
+  width:30px;height:30px;border-radius:7px;display:grid;place-items:center;
+  font:700 16px/1 var(--display);color:#fff;background:#202a48;
+}
+.hero-clean .tool-chip small{font:9px var(--mono);letter-spacing:.04em;color:var(--ink)}
+.hero-clean .tool-ps b{background:linear-gradient(145deg,#092d58,#153d7a);color:#42b9ff}
+.hero-clean .tool-ai b{background:linear-gradient(145deg,#4d1b08,#9a390d);color:#ffad24}
+.hero-clean .tool-figma b{background:linear-gradient(145deg,#17142c,#44336f);color:#f7a4dc}
+.hero-clean .tool-canva b{background:linear-gradient(135deg,#00b6c9,#6554d9);color:#fff}
+.hero-clean .tool-gemini b{background:linear-gradient(135deg,#4a7df5,#9a55e8,#ed78b8);color:#fff}
+.hero-clean .tool-chatgpt b{background:#153d34;color:#fff}
+.hero-clean .tool-firefly b{background:linear-gradient(135deg,#e7a12a,#f16a35);color:#fff}
+.hero-clean .tool-chip:nth-child(2){animation-delay:-1.7s}
+.hero-clean .tool-chip:nth-child(3){animation-delay:-3.1s}
+.hero-clean .tool-chip:nth-child(4){animation-delay:-2.4s}
+@keyframes tool-drift{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-7px) rotate(1deg)}}
+@media(max-width:760px){
+ .hero-clean .tool-cloud{gap:6px}
+ .hero-clean .tool-cloud-left{left:3%;top:21%}
+ .hero-clean .tool-cloud-right{right:3%;top:21%}
+ .hero-clean .tool-chip{padding:5px;border-radius:7px;gap:0}
+ .hero-clean .tool-chip b{width:25px;height:25px;font-size:13px}
+ .hero-clean .tool-chip small{display:none}
+ .hero-clean .tool-cloud-left .tool-chip:nth-child(n+3){display:none}
+ .hero-clean .tool-cloud-right .tool-chip:nth-child(n+3){display:none}
+}
+@media(prefers-reduced-motion:reduce){.hero-clean .tool-chip{animation:none!important}}
