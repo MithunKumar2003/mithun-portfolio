@@ -61,3 +61,20 @@ body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-f
  .hero-title{font-size:clamp(48px,11.5vw,62px)}
  .hero-sub p{font-size:12px}
 }
+
+/* Oversized moving name layer behind the hero portrait */
+.hero{isolation:isolate}
+.name-marquee{position:absolute;z-index:1;top:43%;left:0;width:100%;overflow:hidden;pointer-events:none;transform:translateY(-50%);white-space:nowrap}
+.name-marquee-track{display:flex;width:max-content;align-items:center;gap:.22em;animation:name-drift 28s linear infinite}
+.name-marquee-track span{font-family:var(--display);font-size:clamp(100px,17vw,245px);font-weight:700;line-height:.82;letter-spacing:-.095em;color:var(--ink);white-space:nowrap}
+.name-marquee-track span:nth-child(even){color:var(--red)}
+@keyframes name-drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.hero-copy{position:relative;z-index:2}
+.hero-stage{z-index:3}
+.hero-bottom{z-index:4}
+@media(max-width:760px){
+ .name-marquee{top:58%}
+ .name-marquee-track span{font-size:clamp(76px,19vw,132px)}
+ .hero-stage{z-index:3}
+}
+@media(prefers-reduced-motion:reduce){.name-marquee-track{animation:none;transform:translateX(-12%)}}
