@@ -82,7 +82,7 @@ body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-f
 /* Minimal centered hero: portrait foreground, one moving name in background */
 .hero.hero-clean{height:calc(100svh - 88px);min-height:620px;max-height:980px;padding:0;position:relative;overflow:hidden;isolation:isolate;background:var(--paper)}
 .hero-clean .name-marquee{top:49%;left:0;width:100%;transform:translateY(-50%);z-index:1;overflow:hidden}
-.hero-clean .name-marquee-track{display:flex;width:max-content;gap:.32em;animation:name-drift-right 30s linear infinite;will-change:transform}
+.hero-clean .name-marquee-track{display:flex;width:max-content;gap:.72em;animation:name-drift-right 30s linear infinite;will-change:transform}
 .hero-clean .name-marquee-track span{font-family:var(--display);font-size:clamp(112px,16vw,250px);font-weight:700;letter-spacing:-.09em;line-height:.9;color:var(--ink);white-space:nowrap}
 .hero-clean .name-marquee-track span:nth-child(even){color:var(--red)}
 @keyframes name-drift-right{from{transform:translateX(-50%)}to{transform:translateX(0)}}
