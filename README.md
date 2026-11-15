@@ -15,7 +15,7 @@ Open `index.html` in a browser.
 1. Open the repository **Settings → Pages**.
 2. Under **Build and deployment**, choose **Deploy from a branch**.
 3. Select **main** and **/(root)**, then save.
-4. Your website will be available at: https://mithunkum ar2003.github.io/mithun-portfolio/
+4. Your website will be available at: https://mithunkumar2003.github.io/mithun-portfolio/
 
 ## Customize before sharing
 - Replace the concept-study gallery cards in `index.html` with real project images and descriptions.
