@@ -428,3 +428,13 @@ body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-f
     drop-shadow(0 7px 12px rgba(185,54,45,.14))
     drop-shadow(0 16px 20px rgba(185,54,45,.08))!important;
 }
+
+
+/* Subtle black shadows on the work thumbnails only */
+.work-grid .work-image{
+  box-shadow:0 5px 12px rgba(0,0,0,.08),0 14px 26px rgba(0,0,0,.06)!important;
+  transition:box-shadow .35s ease,transform .35s ease;
+}
+.work-grid .work-image:hover{
+  box-shadow:0 8px 18px rgba(0,0,0,.12),0 20px 34px rgba(0,0,0,.09)!important;
+}
