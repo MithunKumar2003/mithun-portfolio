@@ -78,3 +78,22 @@ body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-f
  .hero-stage{z-index:3}
 }
 @media(prefers-reduced-motion:reduce){.name-marquee-track{animation:none;transform:translateX(-12%)}}
+
+/* Minimal centered hero: portrait foreground, one moving name in background */
+.hero.hero-clean{height:calc(100svh - 88px);min-height:620px;max-height:980px;padding:0;position:relative;overflow:hidden;isolation:isolate;background:var(--paper)}
+.hero-clean .name-marquee{top:49%;left:0;width:100%;transform:translateY(-50%);z-index:1;overflow:hidden}
+.hero-clean .name-marquee-track{display:flex;width:max-content;gap:.32em;animation:name-drift-right 30s linear infinite;will-change:transform}
+.hero-clean .name-marquee-track span{font-family:var(--display);font-size:clamp(112px,16vw,250px);font-weight:700;letter-spacing:-.09em;line-height:.9;color:var(--ink);white-space:nowrap}
+.hero-clean .name-marquee-track span:nth-child(even){color:var(--red)}
+@keyframes name-drift-right{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.hero-clean .hero-stage{position:absolute;z-index:2;left:50%;right:auto;top:auto;bottom:0;transform:translateX(-50%);width:min(42vw,510px);height:94%;display:flex;justify-content:center;align-items:flex-end}
+.hero-clean .portrait-frame{position:relative;inset:auto;width:100%;height:100%;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;overflow:visible!important}
+.hero-clean .hero-photo{width:100%;height:100%;object-fit:contain;object-position:center bottom;display:block;filter:drop-shadow(0 16px 20px rgba(30,25,20,.06))}
+.hero-clean .name-marquee-track{animation-duration:34s}
+@media(max-width:760px){
+ .hero.hero-clean{height:calc(100svh - 70px);min-height:570px}
+ .hero-clean .hero-stage{width:min(82vw,390px);height:88%}
+ .hero-clean .name-marquee{top:46%}
+ .hero-clean .name-marquee-track span{font-size:clamp(82px,19vw,135px)}
+}
+@media(prefers-reduced-motion:reduce){.hero-clean .name-marquee-track{animation:none;transform:translateX(-20%)}}
