@@ -517,3 +517,35 @@ body.modal-open .cursor-ring{
 }
 .project-modal{cursor:none}
 .project-modal button,.project-modal a{cursor:none}
+
+
+/* Illustrator-inspired pen-nib cursor */
+@media (hover:hover) and (pointer:fine){
+  body{cursor:none}
+  body a,body button,body [role="button"]{cursor:none}
+  .cursor-dot{display:none!important}
+  .cursor-ring{
+    width:30px!important;height:30px!important;
+    border:0!important;border-radius:0!important;
+    background:transparent!important;
+    transition:transform .16s ease,opacity .16s ease!important;
+    display:grid;place-items:center;
+    filter:drop-shadow(0 1px 1px rgba(242,234,219,.65));
+  }
+  .cursor-ring:before{
+    content:"";display:block;width:27px;height:27px;
+    background:var(--ink);
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M5 27 11.2 8.2 23.8 2 21.6 15.8 5 27Z' fill='black'/%3E%3Cpath d='m11.2 8.2 10.4 7.6M5 27l12.1-10.4' fill='none' stroke='white' stroke-width='1.5'/%3E%3Ccircle cx='5' cy='27' r='2.2' fill='white'/%3E%3C/svg%3E") center/contain no-repeat;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M5 27 11.2 8.2 23.8 2 21.6 15.8 5 27Z' fill='black'/%3E%3Cpath d='m11.2 8.2 10.4 7.6M5 27l12.1-10.4' fill='none' stroke='white' stroke-width='1.5'/%3E%3Ccircle cx='5' cy='27' r='2.2' fill='white'/%3E%3C/svg%3E") center/contain no-repeat;
+    transform:rotate(-12deg);
+  }
+  .cursor-ring:after{
+    content:"";position:absolute;width:5px;height:5px;border-radius:50%;
+    background:var(--red);top:3px;right:2px;
+    box-shadow:0 0 0 1px var(--paper);
+  }
+  .cursor-ring.hover{width:34px!important;height:34px!important;background:transparent!important;transform:translate(-50%,-50%) scale(1.12)}
+}
+@media (hover:none),(pointer:coarse){
+  .cursor-dot,.cursor-ring{display:none!important}
+}
