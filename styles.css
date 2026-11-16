@@ -702,3 +702,46 @@ body.modal-open .cursor-ring{
     transform:scale(1.2)!important;
   }
 }
+
+
+/* Restore the moving name marquee on mobile while keeping the portrait unchanged */
+@media (max-width:760px){
+  .hero-clean .name-marquee{
+    top:44%!important;
+    left:0!important;
+    width:100%!important;
+    overflow:hidden!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    transform:translateY(-50%)!important;
+    z-index:1!important;
+  }
+  .hero-clean .name-marquee-track{
+    display:flex!important;
+    width:max-content!important;
+    flex:0 0 auto!important;
+    justify-content:flex-start!important;
+    align-items:center!important;
+    gap:2.5rem!important;
+    animation:name-drift-right 34s linear infinite!important;
+    transform:translateX(-50%);
+    will-change:transform;
+  }
+  .hero-clean .name-marquee-track span{
+    display:block!important;
+    flex:0 0 auto!important;
+    font-size:clamp(44px,10vw,76px)!important;
+    line-height:1!important;
+    letter-spacing:-.075em!important;
+    white-space:nowrap!important;
+    color:var(--red)!important;
+  }
+}
+@media (max-width:420px){
+  .hero-clean .name-marquee-track{gap:2rem!important;animation-duration:30s!important}
+  .hero-clean .name-marquee-track span{font-size:10vw!important}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-clean .name-marquee-track{animation:none!important;transform:translateX(-20%)!important}
+}
