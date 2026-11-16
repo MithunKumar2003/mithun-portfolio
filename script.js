@@ -20,8 +20,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",
  const grid=document.querySelector("#portfolio-grid"),filters=document.querySelector("#portfolio-filters"),modal=document.querySelector("#project-modal");
  if(!grid||!filters||!modal)return;
  const projects=[
-  {file:"Brindha logo.png",folder:"",category:"logo-design",label:"LOGO DESIGN",title:"Brindha — Logo design",description:"Illustrated portrait and Tamil lettering arranged as a distinctive logo composition.",client:"Brindha",software:"Adobe Illustrator"},
-  {file:"Brindha logo 1.png",folder:"",category:"logo-design",label:"LOGO DESIGN",title:"Brindha — Logo variation",description:"A horizontal application of the Brindha logo, pairing the illustrated portrait with Tamil lettering.",client:"Brindha",software:"Adobe Illustrator"},
+  {file:"logos-01.jpg",folder:"",category:"logo-design",label:"LOGO DESIGN",title:"Logo designs — Collection 01",description:"A collection of logo concepts and identity designs.",client:"Client details not added",software:"Software details not added"},
   ...["BR-01.png","BR-02.png","BR-03.png"].map(file=>({file,folder:"brochure",category:"brochure",label:"BROCHURE",title:file.replace(".png",""),description:"Brochure design from the selected print portfolio."})),
   ...["BC-01.png","BC-02.png","BC-03.png","BC-04.png"].map(file=>({file,folder:"Business cards",category:"business-cards",label:"BUSINESS CARD",title:file.replace(".png",""),description:"Business card design from the selected print portfolio."})),
   ...["CT-01.png","CT-02.png"].map(file=>({file,folder:"certificate initiation",category:"certificate-initiation",label:"CERTIFICATE",title:file.replace(".png",""),description:"Certificate design from the selected portfolio."})),
@@ -30,7 +29,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",
   ...["Lable-1-01.png","Lable-2-01.png","Lable-3-01.png","Lable-4-01.png"].map(file=>({file,folder:"Packaging",category:"packaging",label:"PACKAGING",title:file.replace(".png",""),description:"Packaging and label design from the selected portfolio."})),
   ...["ST-01.png","ST-02.png","ST-03.png","ST-04.png"].map(file=>({file,folder:"Stickers",category:"stickers",label:"STICKER",title:file.replace(".png",""),description:"Sticker design from the selected print portfolio."})),
   ...["ST-01.png","ST-02.png","ST-03.png"].map(file=>({file,folder:"standees",category:"standees",label:"STANDEE",title:file.replace(".png",""),description:"Standee design from the selected large-format portfolio."})),
-  ...["Book-01.png","Book-02.png","NO parking board.png","logos-01.jpg"].map(file=>({file,folder:"Other Designs",category:"other-designs",label:"OTHER DESIGN",title:file.replace(/\.(png|jpg)$/i,""),description:"A selected graphic design project from the other designs collection."}))
+  ...["FL-01.png","FL-02.png","FL-03.png","FL-04.png"].map(file=>({file,folder:"flyers",category:"flyers",label:"FLYER",title:file.replace(".png",""),description:"Flyer design from the selected print portfolio."})),
+  ...["Book-01.png","Book-02.png","NO parking board.png"].map(file=>({file,folder:"Other Designs",category:"other-designs",label:"OTHER DESIGN",title:file.replace(/\.(png|jpg)$/i,""),description:"A selected graphic design project from the other designs collection."}))
  ];
  const encodePath=p=>p.split("/").map(encodeURIComponent).join("/");
  const imagePath=p=>p.folder?"images/"+encodePath(p.folder)+"/"+encodeURIComponent(p.file):"images/"+encodeURIComponent(p.file);
