@@ -651,3 +651,54 @@ body.modal-open .cursor-ring{
 @media (prefers-reduced-motion:reduce){
   .hero-clean .name-marquee-track,.ticker-track{animation:none!important}
 }
+
+
+/* Mobile follow-up: reliably disable the custom nib and lift the portrait */
+@media (max-width:1024px), (pointer:coarse), (hover:none){
+  html,body,body *{cursor:auto!important}
+  .cursor-pen,.cursor-dot,.cursor-ring{
+    display:none!important;
+    visibility:hidden!important;
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+}
+@media (max-width:760px){
+  /* Move the portrait substantially higher so the head sits closer to the name */
+  .hero-clean .hero-stage{
+    width:min(108vw,540px)!important;
+    height:96%!important;
+    bottom:-2%!important;
+    overflow:visible!important;
+  }
+  .hero-clean .portrait-frame{
+    width:100%!important;
+    height:100%!important;
+    overflow:visible!important;
+  }
+  .hero-clean .hero-photo{
+    width:100%!important;
+    height:100%!important;
+    object-fit:contain!important;
+    object-position:center bottom!important;
+    transform:scale(1.16)!important;
+    transform-origin:center bottom!important;
+  }
+  /* Never let a second marquee copy peek into the mobile viewport */
+  .hero-clean .name-marquee-track span:not(:first-child){
+    display:none!important;
+  }
+  .hero-clean .name-marquee{
+    top:44%!important;
+  }
+}
+@media (max-width:420px){
+  .hero-clean .hero-stage{
+    width:112vw!important;
+    height:94%!important;
+    bottom:-1%!important;
+  }
+  .hero-clean .hero-photo{
+    transform:scale(1.2)!important;
+  }
+}
