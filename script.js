@@ -45,7 +45,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",
   const left=document.createElement("div"),h=document.createElement("h3"),desc=document.createElement("p"),year=document.createElement("span");
   h.textContent=p.title;desc.textContent=p.label.toLowerCase().replace(/\b\w/g,m=>m.toUpperCase())+" · Selected portfolio work";year.textContent="2026";
   left.append(h,desc);info.append(left,year);card.append(link,info);
-  if(window.IntersectionObserver&&window.revealObserver)window.revealObserver.observe(card);
+  card.classList.add("in-view");
   return card;
  };
  projects.forEach((p,index)=>grid.append(cardFor(p,index)));
