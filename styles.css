@@ -745,3 +745,40 @@ body.modal-open .cursor-ring{
 @media (prefers-reduced-motion:reduce){
   .hero-clean .name-marquee-track{animation:none!important;transform:translateX(-20%)!important}
 }
+
+
+/* Mobile name marquee: restore the large continuous movement in normal Chrome */
+@media (max-width:760px){
+  .hero-clean .name-marquee{
+    top:56%!important;
+    height:auto!important;
+    overflow:hidden!important;
+    z-index:1!important;
+  }
+  .hero-clean .name-marquee-track{
+    display:flex!important;
+    width:max-content!important;
+    gap:2.8rem!important;
+    animation:name-drift-right 24s linear infinite!important;
+    transform:translateX(-50%);
+    will-change:transform;
+  }
+  .hero-clean .name-marquee-track span{
+    display:block!important;
+    flex:0 0 auto!important;
+    font-size:clamp(64px,15vw,104px)!important;
+    line-height:.95!important;
+    letter-spacing:-.085em!important;
+    white-space:nowrap!important;
+  }
+}
+/* The user explicitly wants the name animation even when the phone requests reduced motion */
+@media (max-width:760px) and (prefers-reduced-motion:reduce){
+  .hero-clean .name-marquee-track{
+    animation:name-drift-right 24s linear infinite!important;
+  }
+}
+@media (max-width:420px){
+  .hero-clean .name-marquee-track{gap:2.2rem!important;animation-duration:22s!important}
+  .hero-clean .name-marquee-track span{font-size:15vw!important}
+}
