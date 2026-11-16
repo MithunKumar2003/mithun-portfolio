@@ -1,5 +1,7 @@
 const loader=document.querySelector(".loader");
-window.addEventListener("load",()=>{setTimeout(()=>loader?.classList.add("done"),850)});
+const hideLoader=()=>loader?.classList.add("done");
+setTimeout(hideLoader,450);
+window.addEventListener("load",()=>setTimeout(hideLoader,150),{once:true});
 const menuButton=document.querySelector(".menu-btn");
 const nav=document.querySelector("#nav");
 menuButton?.addEventListener("click",()=>{const open=nav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(open));menuButton.textContent=open?"×":"☰"});
