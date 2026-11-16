@@ -506,3 +506,14 @@ body.modal-open{overflow:hidden}
  .portfolio-filters{gap:7px;margin:25px 0 22px}
  .filter-btn{font-size:9px;padding:9px 11px}
 }
+
+
+/* Keep the custom pointer visible above the open project lightbox */
+body.modal-open .cursor-dot,
+body.modal-open .cursor-ring{
+  z-index:1200!important;
+  display:block!important;
+  pointer-events:none!important;
+}
+.project-modal{cursor:none}
+.project-modal button,.project-modal a{cursor:none}
