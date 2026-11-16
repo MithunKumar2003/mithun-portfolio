@@ -549,3 +549,105 @@ body.modal-open .cursor-ring{
 @media (hover:none),(pointer:coarse){
   .cursor-dot,.cursor-ring{display:none!important}
 }
+
+
+/* Mobile hero refinement: compact layout, complete name, no desktop pointer */
+@media (max-width:760px), (pointer:coarse){
+  body, body a, body button{cursor:auto!important}
+  .cursor-pen,.cursor-dot,.cursor-ring{display:none!important;visibility:hidden!important}
+}
+@media (max-width:760px){
+  .hero.hero-clean{
+    height:clamp(650px, calc(100svh - 64px), 790px)!important;
+    min-height:650px!important;
+    max-height:790px!important;
+    padding:0!important;
+  }
+  .hero-clean .tool-cloud{
+    top:22px!important;
+    max-width:42%!important;
+    gap:7px!important;
+    z-index:5!important;
+  }
+  .hero-clean .tool-cloud-left{left:4%!important;right:auto!important}
+  .hero-clean .tool-cloud-right{right:4%!important;left:auto!important}
+  .hero-clean .tool-chip{
+    padding:4px!important;
+    gap:0!important;
+    border-radius:9px!important;
+  }
+  .hero-clean .tool-chip b{width:29px!important;height:29px!important;font-size:14px!important}
+  .hero-clean .tool-chip small{display:none!important}
+  .hero-clean .tool-cloud-left .tool-chip:nth-child(n+3),
+  .hero-clean .tool-cloud-right .tool-chip:nth-child(n+3){display:none!important}
+
+  /* Show one complete name instead of a cropped moving marquee */
+  .hero-clean .name-marquee{
+    top:43%!important;
+    left:0!important;
+    width:100%!important;
+    overflow:visible!important;
+    justify-content:center!important;
+    z-index:1!important;
+  }
+  .hero-clean .name-marquee-track{
+    width:100%!important;
+    justify-content:center!important;
+    gap:0!important;
+    animation:none!important;
+    transform:none!important;
+  }
+  .hero-clean .name-marquee-track span{
+    display:none!important;
+    font-size:clamp(34px,9.2vw,58px)!important;
+    line-height:1!important;
+    letter-spacing:-.075em!important;
+    white-space:nowrap!important;
+    color:var(--red)!important;
+  }
+  .hero-clean .name-marquee-track span:first-child{display:block!important}
+
+  /* Bring the portrait upward and make it the visual focus */
+  .hero-clean .hero-stage{
+    width:min(94vw,470px)!important;
+    height:78%!important;
+    bottom:0!important;
+    top:auto!important;
+    left:50%!important;
+    right:auto!important;
+    transform:translateX(-50%)!important;
+    z-index:3!important;
+  }
+  .hero-clean .portrait-frame{
+    width:100%!important;
+    height:100%!important;
+    display:flex!important;
+    justify-content:center!important;
+    align-items:flex-end!important;
+  }
+  .hero-clean .hero-photo{
+    width:100%!important;
+    height:100%!important;
+    object-fit:contain!important;
+    object-position:center bottom!important;
+  }
+  .hero-clean .decor-sticker-type{left:4%!important;bottom:12%!important;top:auto!important}
+  .hero-clean .decor-sticker-color{right:4%!important;bottom:12%!important;top:auto!important}
+  .hero-clean .decor-spark-one{left:7%!important;top:18%!important}
+  .hero-clean .decor-spark-two{right:7%!important;top:18%!important}
+  .hero-clean .decor-caption,.hero-clean .decor-orbit,
+  .hero-clean .decor-cross,.hero-clean .decor-pencil{display:none!important}
+  .ticker{overflow:hidden!important}
+  .ticker-track{animation-duration:38s!important}
+}
+@media (max-width:420px){
+  .hero.hero-clean{height:680px!important;min-height:680px!important}
+  .hero-clean .name-marquee{top:42%!important}
+  .hero-clean .name-marquee-track span{font-size:9vw!important}
+  .hero-clean .hero-stage{width:100vw!important;height:76%!important}
+  .hero-clean .decor-sticker-type{bottom:10%!important}
+  .hero-clean .decor-sticker-color{bottom:10%!important}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-clean .name-marquee-track,.ticker-track{animation:none!important}
+}
